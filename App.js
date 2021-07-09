@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, FlatList, Keyboard, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
+import { Alert, FlatList, Keyboard, SafeAreaView, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import AddTodo from './components/addtodo';
 import Header from './components/header';
 import TodoItem from './components/todoitem';
@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss()}>
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Header />
         <View style={styles.content}>
           <AddTodo submitHandler={submitHandler} />
@@ -44,7 +44,7 @@ export default function App() {
             />
           </View>
         </View>
-      </View>
+      </SafeAreaView>
     </TouchableWithoutFeedback>
   );
 }
