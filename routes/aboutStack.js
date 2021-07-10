@@ -12,12 +12,8 @@ export default function AboutStack() {
             screenOptions={{
                 headerStyle: {
                     backgroundColor: '#eee',
-                    height: 60
                 },
-                headerTintColor: '#444',
-                headerTitleStyle: {
-                    fontWeight: 'bold'
-                }
+                headerTintColor: '#444'
             }}
         >
             <Stack.Screen
@@ -25,6 +21,12 @@ export default function AboutStack() {
                 component={About}
                 options={({ navigation }) => ({
                     title: 'About Rater',
+                    headerTitleContainerStyle: {
+                        left: 0,
+                        right: 0,
+                        top: 0,
+                        bottom: 0
+                    },
                     headerTitle: () => <Header title='About Rater' navigation={navigation} />
                 })}
             />
