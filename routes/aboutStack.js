@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from '../screens/home';
-import ReviewDetails from '../screens/reviewDetails';
+import About from '../screens/about';
 import Header from '../shared/header';
 
 const Stack = createStackNavigator();
 
-export default function HomeStack() {
+export default function AboutStack() {
     return (
         <Stack.Navigator
-            initialRouteName="Rater"
+            initialRouteName="About"
             screenOptions={{
                 headerStyle: {
                     backgroundColor: '#eee',
@@ -22,14 +21,13 @@ export default function HomeStack() {
             }}
         >
             <Stack.Screen
-                name="Rater"
-                component={Home}
+                name="About"
+                component={About}
                 options={({ navigation }) => ({
-                    title: 'Rater',
-                    headerTitle: () => <Header title='Rater' navigation={navigation} />
+                    title: 'About Rater',
+                    headerTitle: () => <Header title='About Rater' navigation={navigation} />
                 })}
             />
-            <Stack.Screen name="Review Details" component={ReviewDetails} />
         </Stack.Navigator>
     );
 }

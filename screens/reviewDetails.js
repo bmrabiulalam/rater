@@ -2,7 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { globalStyles } from '../styles/global.js';
 
-export default function ReviewDetail({ navigation }) {
+export default function ReviewDetail({ route, navigation }) {
+    const { title, body, rating } = route.params;
+
     const pressHandler = () => {
         // navigation.navigate('Home');
         navigation.goBack('Review Details');
@@ -10,7 +12,9 @@ export default function ReviewDetail({ navigation }) {
 
     return (
         <View style={globalStyles.container}>
-            <Text>Review Details Screen</Text>
+            <Text>{title}</Text>
+            <Text>{body}</Text>
+            <Text>{rating}</Text>
             <Button title='back to home' onPress={pressHandler} />
         </View>
     );
