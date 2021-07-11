@@ -37,7 +37,7 @@ export default function ReviewForm({ addReview }) {
                         <Text style={globalStyles.errorText}> {touched.title && errors.title} </Text>
 
                         <TextInput
-                            multiline
+                            multiline minHeight={150}
                             style={globalStyles.input}
                             placeholder='Review Body'
                             onChangeText={handleChange('body')}
